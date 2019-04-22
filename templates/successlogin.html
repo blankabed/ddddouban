@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查找页面</title>
+    <style>
+        body{
+            text-align: center;
+            background:url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3225727869,3045632363&fm=26&gp=0.jpg)  no-repeat center center;
+            background-size:cover;
+            background-attachment:fixed;
+        }
+        div p{
+            /*border: solid 5px red;*/
+            display: inline-block;
+            width:130px;
+            height:80px;
+            margin-left: 10px;
+
+            /*padding-left:20px;*/
+            /*padding-top:20px;*/
+            text-align:center;
+            line-height:50px;
+            vertical-align:33px;
+            /*vertical-align: super;*/
+        }
+        input{
+            display: inline-block;
+            width:300px;
+            height:30px;
+        }
+
+
+        .four{
+            width:300px;
+        }
+        .yan{
+            width:181px;
+            height:36px;
+        }
+        #o666{
+            width:10px;
+            height:10px;
+        }
+        label{
+            font-size:12px;
+            vertical-align:1px;
+        }
+        .shortselect{
+            background:#fafdfe;
+            height:28px;
+            width:180px;
+            line-height:28px;
+            border:1px solid #9bc0dd;
+            -moz-border-radius:2px;
+            -webkit-border-radius:2px;
+            border-radius:2px;
+            margin-left: 30px;
+        }
+        .chazhao{
+            display:inline-block;
+            margin-left: 55px;
+            background-color:blue;
+            color:white;
+            padding:0px;
+            border-width:0px;
+            height:46px;
+        }
+
+    </style>
+</head>
+<body>
+    <form action = "/search_movie/" method = "post">
+        {% csrf_token %}
+        <select class="shortselect" name="selectkey" id="selectkey">
+            <option value ="moviename">根据电影名查找</option>
+            <option value ="director">根据导演查找</option>
+            <option value="actor">根据主演查找</option>
+            <option value="score">根据评分查找</option>
+        </select>
+        <p>
+            <font style="font-family: STXingkai" color="white">请输入关键字</font>
+            &nbsp;<input  type = "text" name = "searchname" placeholder="请输入内容" />
+        </p>
+        <p>
+            <input  style="margin-left: 150px" type = "submit" value = "查找" name="search" class = "chazhao">
+        </p>
+    </form>
+
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="referrer" content="no-referrer">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索页面</title>
+    <style>
+        img{
+            width: 120px;
+            height: 200px;
+        }
+        body{
+            background: hotpink;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="row-fluid">
+                <div class="hd">
+                    <p>
+                    {% for info in post_list %}
+                        <div style=" float: left ;margin-left: 20px " >
+                        <em >{{ info.id }}</em>
+                        <img  src="{{ info.movieimg }}" />
+                        <div id="cc" style=""   onmouseover="mouseOver(this)"  onmouseout="mouseOut(this)" >
+                            <div  style="opacity: 0.5"> 点击获得详细内容</div>
+                            <div id="{{ info.id }}"  class="{{ info.id }}" style="opacity: 1; bottom: 0px; height: 70px; width: 180px; display: none; float: left">
+                             <p class="name">{{ info.moviename }}</p>
+                             <i class="fraction">评分：{{ info.grade }}</i>
+                             <p class="content">
+                              {{ info.actoranddirector }}
+                                 <br>
+                                {{ info.type }}
+                             </p>
+                            </div>
+                        </div>
+{#                        <input type="button" id="content" value="content" onclick="content()" />#}
+
+                        </div>
+                    {% endfor %}
+                    </p>
+                </div>
+
+    </div>
+    <script>
+        function mouseOver(self)
+    {
+     self.children[1].style.display='block';
+    }
+    function mouseOut(self)
+    {
+    self.children[1].style.display='none'
+    }
+        //js代码
+        //找到XX元素，一般给元素加id
+
+        {#for(info=1;info<=list.length;info++)#}
+
+            //给xx元素加事件
+
+        {#function mouseOver()#}
+        {#{#}
+        {##}
+        {#    div1 = document.getElementById();#}
+        {#    div1.style.display = "block";#}
+
+        {#function mouseOut()#}
+        {#{#}
+        {#    div1 = document.getElementById();#}
+        {#    div1.style.display = "none";#}
+
+        {#content.onmouseover=function () {#}
+        {#        //代码段#}
+        {#    div1 = document.getElementById('2');#}
+        {#    div1.style.display = "block";#}
+        {#    }#}
+        {#content.onmouseout=function () {#}
+        {#    div1=document.getElementsByClassName('2');#}
+        {#    div1.style.display="none"#}
+        {#    }#}
+        //触发事件
+    </script>
+</body>
+</html>
